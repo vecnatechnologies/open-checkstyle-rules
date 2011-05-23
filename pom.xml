@@ -26,34 +26,25 @@ permissions and limitations under the License.  -->
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:git://github.com/vecna/open-checkstyle-rules.git</connection>
-    <url>scm:git:git://github.com/vecna/open-checkstyle-rules.git</url>
-    <developerConnection>scm:git:git://github.com/vecna/open-checkstyle-rules.git</developerConnection>
+    <connection>scm:git:git://github.com/vecnatechnologies/open-checkstyle-rules.git</connection>
+    <developerConnection>scm:git:git@github.com:vecnatechnologies/open-checkstyle-rules.git</developerConnection>
+    <url>https://github.com/vecnatechnologies/open-checkstyle-rules</url>
   </scm>
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
   <organization>
-    <name>Vecna Technologies</name>
-    <url>http://vecna.com</url>    
+    <name>Vecna Technologies Inc.</name>
+    <url>http://www.vecna.com/</url>
   </organization>
+  <developers>
+    <developer>
+      <id>vecna</id>
+      <name>Vecna Technologies</name>
+      <email>opensource@vecna.com</email>
+    </developer>
+  </developers>
   <inceptionYear>2010</inceptionYear>
-  <distributionManagement>
-    <repository>
-      <id>releases</id>
-      <name>Sonatype OSS - Releases</name>
-      <url>https://oss.sonatype.org/content/repositories/releases</url>
-    </repository>
-    <snapshotRepository>
-      <id>snapshots</id>
-      <name>Sonatype OSS - Releases</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-release-plugin</artifactId>
-        <version>2.0-beta-8</version>
-      </plugin>
-    </plugins>
-  </build>
 </project>
