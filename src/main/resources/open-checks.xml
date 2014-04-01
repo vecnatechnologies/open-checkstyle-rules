@@ -21,9 +21,8 @@ limitations under the License.
 
         <!-- Naming conventions -->
         <module name="ConstantName">
-            <!-- Vecna customization: need to allow either FOO_BAR format,
-                 or s_foo format -->
-            <property name="format" value="^((s_[a-z][0-9a-zA-Z]*)|([A-Z][A-Z0-9]*(_[A-Z0-9]+)*))$"/>
+            <!-- Allow UPPER_CASE, foo, s_foo -->
+            <property name="format" value="^(((s_)?[a-z][0-9a-zA-Z]*)|([A-Z][A-Z0-9]*(_[A-Z0-9]+)*))$"/>
             <property name="severity" value="warning"/>
         </module>
         <module name="LocalFinalVariableName">
@@ -33,8 +32,8 @@ limitations under the License.
             <property name="severity" value="error"/>
         </module>
         <module name="MemberName">
-            <!-- Vecna extension -->
-            <property name="format" value="m_[a-z][0-9a-zA-Z]*"/>
+            <!-- Allow foo, m_foo -->
+            <property name="format" value="(m_)?[a-z][0-9a-zA-Z]*"/>
             <property name="severity" value="error"/>
         </module>
         <module name="MethodName">
@@ -47,8 +46,8 @@ limitations under the License.
             <property name="severity" value="error"/>
         </module>
         <module name="StaticVariableName">
-            <!-- Vecna extension -->
-            <property name="format" value="s_[a-z][0-9a-zA-Z]*"/>
+            <!-- Allow foo, s_foo -->
+            <property name="format" value="(s_)?[a-z][0-9a-zA-Z]*"/>
             <property name="severity" value="error"/>
         </module>
         <module name="TypeName">
@@ -93,6 +92,13 @@ limitations under the License.
         <module name="JavadocMethod">
             <!-- Vecna extension: allow documenting undeclared RTE -->
             <property name="scope" value="protected"/>
+            <property name="severity" value="error"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+            <property name="allowUndeclaredRTE" value="true"/>
+            <property name="allowThrowsTagsForSubclasses" value="true"/>
+        </module>
+        <module name="JavadocMethod">
+            <!-- Vecna extension: allow documenting undeclared RTE -->
             <property name="severity" value="error"/>
             <property name="allowMissingPropertyJavadoc" value="true"/>
             <property name="allowUndeclaredRTE" value="true"/>
@@ -222,4 +228,9 @@ limitations under the License.
       <property name="severity" value="error"/>
     </module>
 
+    <module name="RegexpSingleline">
+      <!-- \s matches whitespace character, $ matches end of line. -->
+      <property name="format" value="\s+$"/>
+      <property name="message" value="Un-needed White Space Found At End Of Line"/>
+    </module>
 </module>
